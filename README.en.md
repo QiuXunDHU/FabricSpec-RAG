@@ -4,6 +4,8 @@
 
 FabricNIR is a PyTorch research project for recycled textile identification from near-infrared (NIR) spectra. It models the task as spectrum-to-label generation: given wavelength features, the model predicts compact composition labels such as `C93P7` and `P52N48`; the multi-task variant also predicts component ratios.
 
+![FabricSpec-RAG overview](docs/readme_assets/fabricspec_rag_hero.png)
+
 ## Open-Source Scope
 
 According to the data and model release policy, this repository contains only the public release subset:
@@ -18,9 +20,10 @@ According to the data and model release policy, this repository contains only th
 This repository accompanies the paper:
 
 **FabricSpec-RAG: A knowledge graph-augmented Seq2Seq framework for quantitative analysis of complex textile blends from NIR spectra**  
-Qiu Xun, Sun Fengqiang, Liu Youlong, Sun Hengda, Wang Gang, Zhang Jie.  
-*Analytica Chimica Acta*, 2026.  
-ScienceDirect: <https://www.sciencedirect.com/science/article/pii/S0003267026006793?via%3Dihub=>
+Qiu Xun, Sun Fengqiang, Lyu Youlong, Sun Hengda, Wang Gang, Zhang Jie.  
+*Analytica Chimica Acta*, 1417, 345729, 2026.  
+DOI: <https://doi.org/10.1016/j.aca.2026.345729>  
+ScienceDirect: <https://www.sciencedirect.com/science/article/pii/S0003267026006793>
 
 The paper reports Micro-F1 = **0.9880** for component identification and MAE = **0.0026** for ratio prediction.
 
@@ -30,32 +33,7 @@ Note: this open-source release focuses on NIR Seq2Seq modeling, training, evalua
 
 FabricSpec-RAG formulates quantitative NIR textile analysis as spectrum-to-structured-sequence generation. The following diagram shows the paper-level concept; this code release mainly covers spectral encoding, Seq2Seq decoding, training/evaluation, and visualization.
 
-```mermaid
-flowchart LR
-    A["NIR spectrum"] --> B["Preprocessing<br/>normalization"]
-    B --> C["Multi-scale spectral encoder"]
-    C --> D["Seq2Seq decoder"]
-    K["Fabric knowledge graph<br/>(paper-level resource)"] -.-> R["Graph retrieval / RAG context"]
-    R --> D
-    D --> E["Component sequence<br/>e.g. C93P7"]
-    D --> F["Ratio regression"]
-    E --> G["Quantitative textile blend analysis"]
-    F --> G
-```
-
-The main experiment and code workflow is:
-
-```mermaid
-flowchart TD
-    A["Excel spectra<br/>Labels + wavelength columns"] --> B["FabricDataset / MultiTaskFabricDataset"]
-    B --> C["Tokenizer<br/>component IDs + ratios"]
-    C --> D["Backbone<br/>dense / residual / multicov"]
-    D --> E["CBAM optional"]
-    E --> F["Decoder<br/>GRU / LSTM / Transformer"]
-    F --> G["Training & validation"]
-    G --> H["Metrics<br/>F1 / R2 / joint accuracy / ROUGE"]
-    G --> I["Visualizations<br/>attention / t-SNE / curves"]
-```
+![FabricSpec-RAG method overview](docs/readme_assets/method_overview_concept.png)
 
 ## Example Results
 
@@ -76,7 +54,10 @@ FabricNIR/
 ├── checkpoints/             # Selected public checkpoint
 ├── configs/                 # Base and ablation configs
 ├── data/                    # Public sample workbooks
+├── docs/readme_assets/      # README visual assets
 ├── results/best/            # Public best-result figures and metrics
+├── results/multi_task_gru_random_multicov_nocbam/
+│                             # Formal result figures used by README
 ├── experiments/             # Ablation orchestration
 ├── fabric_nir/              # Core Python package
 │   ├── data/                # Datasets and preprocessing
@@ -197,10 +178,12 @@ If this repository or paper is useful for your research, please cite:
 ```bibtex
 @article{qiu2026fabricspecrag,
   title = {FabricSpec-RAG: A knowledge graph-augmented Seq2Seq framework for quantitative analysis of complex textile blends from NIR spectra},
-  author = {Qiu, Xun and Sun, Fengqiang and Liu, Youlong and Sun, Hengda and Wang, Gang and Zhang, Jie},
+  author = {Qiu, Xun and Sun, Fengqiang and Lyu, Youlong and Sun, Hengda and Wang, Gang and Zhang, Jie},
   journal = {Analytica Chimica Acta},
+  volume = {1417},
+  pages = {345729},
   year = {2026},
-  note = {Article PII: S0003267026006793},
+  doi = {10.1016/j.aca.2026.345729},
   url = {https://www.sciencedirect.com/science/article/pii/S0003267026006793}
 }
 ```

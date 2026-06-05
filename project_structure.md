@@ -12,11 +12,14 @@ FabricNIR/
 |   |-- train.xlsx
 |   `-- valid.xlsx
 |-- docs/
-|   `-- open_source_audit.md
+|   |-- open_source_audit.md
+|   `-- readme_assets/
 |-- results/
 |   |-- .gitkeep
-|   `-- best/
+|   |-- best/
 |       |-- metrics/
+|   |   `-- visualizations/
+|   `-- multi_task_gru_random_multicov_nocbam/
 |       `-- visualizations/
 |-- checkpoints/
 |   |-- README.md
@@ -37,8 +40,9 @@ FabricNIR/
 `-- requirements.txt
 ```
 
-Generated outputs are written to `results/`. Only the selected best-result
-artifact set under `results/best/` is tracked; other generated outputs are
-ignored by version control.
+Generated outputs are written to `results/`. Only the selected public result
+artifacts under `results/best/` and
+`results/multi_task_gru_random_multicov_nocbam/` are tracked; other generated
+outputs are ignored by version control.
 Full datasets, intermediate checkpoints, installers, and local project files are
 kept outside the publishable tree through `.gitignore`.

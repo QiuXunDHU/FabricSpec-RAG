@@ -6,7 +6,7 @@ authors:
     given-names: Xun
   - family-names: Sun
     given-names: Fengqiang
-  - family-names: Liu
+  - family-names: Lyu
     given-names: Youlong
   - family-names: Sun
     given-names: Hengda
@@ -17,6 +17,7 @@ authors:
 year: 2026
 repository-code: "https://github.com/QiuXunDHU/FabricSpec-RAG"
 url: "https://www.sciencedirect.com/science/article/pii/S0003267026006793"
+doi: "10.1016/j.aca.2026.345729"
 preferred-citation:
   type: article
   title: "FabricSpec-RAG: A knowledge graph-augmented Seq2Seq framework for quantitative analysis of complex textile blends from NIR spectra"
@@ -25,7 +26,7 @@ preferred-citation:
       given-names: Xun
     - family-names: Sun
       given-names: Fengqiang
-    - family-names: Liu
+    - family-names: Lyu
       given-names: Youlong
     - family-names: Sun
       given-names: Hengda
@@ -35,5 +36,8 @@ preferred-citation:
       given-names: Jie
   journal: "Analytica Chimica Acta"
   year: 2026
-  notes: "Article PII: S0003267026006793"
+  volume: "1417"
+  start: "345729"
+  doi: "10.1016/j.aca.2026.345729"
+  notes: "Article number: 345729; PII: S0003267026006793"
   url: "https://www.sciencedirect.com/science/article/pii/S0003267026006793"
