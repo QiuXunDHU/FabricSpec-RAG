@@ -61,17 +61,13 @@ flowchart TD
 
 以下图片来自已有实验可视化结果，用于展示模型训练和分析输出的形式。
 
-### Best Experiment Metrics
+### Final Metrics
 
-![Best Experiment Metrics](results/best/visualizations/final_metrics_barchart_academic.png)
+![Final Metrics](results/multi_task_gru_random_multicov_nocbam/visualizations/final_metrics_barchart_academic.png)
 
-### Attention Visualization
+### Training Curves
 
-![Attention Visualization](results/best/visualizations/epoch_2_attention_attention.png)
-
-### Embedding t-SNE
-
-![Embedding t-SNE](results/best/visualizations/epoch_2_embedding_tsne.png)
+![Training Curves](results/multi_task_gru_random_multicov_nocbam/visualizations/training_curves_academic.png)
 
 ## 项目结构
 

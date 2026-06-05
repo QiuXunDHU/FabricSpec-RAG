@@ -61,17 +61,13 @@ flowchart TD
 
 The following figures are selected from existing experiment visualizations and show the type of outputs produced by the project.
 
-### Best Experiment Metrics
+### Final Metrics
 
-![Best Experiment Metrics](results/best/visualizations/final_metrics_barchart_academic.png)
+![Final Metrics](results/multi_task_gru_random_multicov_nocbam/visualizations/final_metrics_barchart_academic.png)
 
-### Attention Visualization
+### Training Curves
 
-![Attention Visualization](results/best/visualizations/epoch_2_attention_attention.png)
-
-### Embedding t-SNE
-
-![Embedding t-SNE](results/best/visualizations/epoch_2_embedding_tsne.png)
+![Training Curves](results/multi_task_gru_random_multicov_nocbam/visualizations/training_curves_academic.png)
 
 ## Project Layout
 

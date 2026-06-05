@@ -25,6 +25,8 @@ results/*
 !results/.gitkeep
 !results/best/
 !results/best/**
+!results/multi_task_gru_random_multicov_nocbam/
+!results/multi_task_gru_random_multicov_nocbam/**
 
 # Dataset policy: publish only the small sample workbooks in data/.
 data/*
