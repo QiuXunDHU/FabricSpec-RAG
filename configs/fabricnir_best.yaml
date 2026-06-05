@@ -1,0 +1,26 @@
+# Configuration matching the published FabricNIR checkpoint.
+
+inherit: base_config.yaml
+
+training:
+  task_type: "single_task"
+
+model:
+  backbone:
+    type: "dense"
+    in_channels: 1
+    out_channels: 128
+    kernel_sizes: [3, 5, 7]
+    feature_map_dim: 42
+  attention:
+    use_cbam: true
+    reduction_ratio: 16
+  decoder:
+    type: "gru"
+    input_size: 42
+    hidden_size: 128
+    num_layers: 2
+    dropout: 0.1
+  pretrained:
+    use_pretrained: true
+    weights_path: "checkpoints/fabricnir_best.pt"

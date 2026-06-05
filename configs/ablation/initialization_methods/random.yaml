@@ -1,0 +1,9 @@
+# 随机初始化配置
+inherit: ../../base_config.yaml
+
+model:
+  pretrained:
+    use_pretrained: false
+
+pretrain:
+  use_pretrain: false

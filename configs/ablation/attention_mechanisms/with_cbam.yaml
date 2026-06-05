@@ -1,0 +1,8 @@
+# 使用CBAM注意力机制配置
+inherit: ../../base_config.yaml
+
+model:
+  attention:
+    use_cbam: true
+    reduction_ratio: 16
+    kernel_size: 7

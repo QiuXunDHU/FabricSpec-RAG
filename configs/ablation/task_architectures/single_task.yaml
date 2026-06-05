@@ -1,0 +1,8 @@
+# 单任务架构配置
+inherit: ../../base_config.yaml
+
+training:
+  task_type: "single_task"
+
+model:
+  type: "single_task"

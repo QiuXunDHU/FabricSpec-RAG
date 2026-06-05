@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local IDE and analysis indexes
+.idea/
+.vscode/
+.codegraph/
+
+# Environments and installers
+.venv/
+venv/
+env/
+*.exe
+
+# Private or unreleased artifacts
+_private/
+
+# Experiment outputs
+results/*
+!results/.gitkeep
+
+# Dataset policy: publish only the small sample workbooks in data/.
+data/*
+!data/train.xlsx
+!data/valid.xlsx
+!data/README.md
+
+# Checkpoint policy: publish only the selected best checkpoint.
+checkpoints/*
+!checkpoints/fabricnir_best.pt
+!checkpoints/README.md
+
+# Temporary files
+*.log
+*.tmp
+~$*.xlsx

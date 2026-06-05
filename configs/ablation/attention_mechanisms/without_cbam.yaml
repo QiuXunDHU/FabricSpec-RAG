@@ -1,0 +1,6 @@
+# 不使用CBAM注意力机制配置
+inherit: ../../base_config.yaml
+
+model:
+  attention:
+    use_cbam: false

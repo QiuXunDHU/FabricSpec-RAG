@@ -1,0 +1,8 @@
+# 多任务架构配置
+inherit: ../../base_config.yaml
+
+training:
+  task_type: "multi_task"
+
+model:
+  type: "multi_task"

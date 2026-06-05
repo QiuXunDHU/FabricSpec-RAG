@@ -1,0 +1,20 @@
+# 预训练初始化配置
+inherit: ../../base_config.yaml
+
+model:
+  pretrained:
+    use_pretrained: true
+    # Fill this after running self-supervised pretraining, or override it on
+    # the command line / in a derived config.
+    weights_path: null
+
+pretrain:
+  use_pretrain: true
+  epochs: 2
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  clip_grad_norm: 1.0
+  mlm:
+    mask_prob: 0.15
+    random_prob: 0.1
+    keep_prob: 0.1

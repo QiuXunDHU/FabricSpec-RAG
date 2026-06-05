@@ -1,0 +1,40 @@
+# Ablation experiment matrix.
+
+dimensions:
+  decoder_type:
+    - "gru"
+    - "lstm"
+    - "transformer"
+
+  task_architecture:
+    - "single_task"
+    - "multi_task"
+
+  initialization_method:
+    - "pretrained"
+    - "random"
+
+  attention_mechanism:
+    - "with_cbam"
+    - "without_cbam"
+
+  backbone_type:
+    - "dense"
+    - "residual"
+    - "multicov"
+
+config_paths:
+  decoder_type: "configs/ablation/decoder_types"
+  task_architecture: "configs/ablation/task_architectures"
+  initialization_method: "configs/ablation/initialization_methods"
+  attention_mechanism: "configs/ablation/attention_mechanisms"
+  backbone_type: "configs/ablation/backbone_types"
+
+default_experiment:
+  decoder_type: "transformer"
+  task_architecture: "multi_task"
+  initialization_method: "random"
+  attention_mechanism: "with_cbam"
+  backbone_type: "dense"
+
+base_config: "configs/base_config.yaml"

@@ -1,0 +1,9 @@
+# Residual Backbone配置
+inherit: ../../base_config.yaml
+
+model:
+  backbone:
+    type: "residual"
+    hidden_size: 256
+    num_layers: 3
+    dropout: 0.1

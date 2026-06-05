@@ -1,0 +1,12 @@
+# GRU解码器配置
+inherit: ../../base_config.yaml
+
+model:
+  decoder:
+    type: "gru"
+    input_size: 42  # 与backbone输出的feature_map_dim一致
+    hidden_size: 128  # 与backbone的out_channels一致
+    num_layers: 2
+    dropout: 0.1
+    attention: true
+    nhead: 8

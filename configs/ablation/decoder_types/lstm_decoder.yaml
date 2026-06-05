@@ -1,0 +1,12 @@
+# 解码器类型消融实验配置
+
+inherit: "../../base_config.yaml"
+
+# 覆盖基础配置中的解码器设置
+model:
+  decoder:
+    type: "lstm"  # gru, lstm, transformer
+    input_size: 128
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.1

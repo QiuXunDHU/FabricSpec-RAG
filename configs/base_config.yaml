@@ -1,0 +1,76 @@
+# Base configuration for FabricNIR.
+
+data:
+  train_file: "data/train.xlsx"
+  valid_file: "data/valid.xlsx"
+  test_file: "data/valid.xlsx"
+  batch_size: 32
+  num_workers: 0
+  max_length: 16
+
+model:
+  backbone:
+    type: "dense"  # dense, residual, multicov
+    in_channels: 1
+    out_channels: 128
+    kernel_sizes: [3, 5, 7]
+    num_blocks: 3
+    feature_map_dim: 42
+    num_channels: 3
+
+  attention:
+    use_cbam: true
+    reduction_ratio: 16
+
+  decoder:
+    type: "transformer"  # gru, lstm, transformer
+    input_size: 42
+    hidden_size: 128
+    num_layers: 2
+    dropout: 0.1
+    nhead: 4
+
+  pretrained:
+    use_pretrained: false
+    weights_path: null
+
+training:
+  task_type: "multi_task"  # single_task, multi_task
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  clip_grad_norm: 1.0
+  early_stopping_patience: 5
+  scheduler:
+    use_scheduler: true
+    type: "cosine"
+    warmup_epochs: 5
+    min_lr: 0.00001
+
+  loss:
+    cls_weight: 1.0
+    reg_weight: 0.5
+
+generation:
+  beam_size: 3
+  max_length: 16
+  temperature: 1.0
+  top_k: 5
+
+metrics:
+  component_metrics: ["accuracy", "precision", "recall", "f1"]
+  ratio_metrics: ["mae", "mse", "r2"]
+  joint_metrics: ["joint_accuracy"]
+
+visualization:
+  tsne:
+    perplexity: 30
+    n_iter: 1000
+  shap:
+    n_samples: 100
+  attention:
+    cmap: "viridis"
+
+results_dir: "results"
+model_dir: "results/models"
+metrics_dir: "results/metrics"
+visualization_dir: "results/visualizations"
