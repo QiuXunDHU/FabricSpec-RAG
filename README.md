@@ -61,17 +61,9 @@ flowchart TD
 
 以下图片来自已有实验可视化结果，用于展示模型训练和分析输出的形式。
 
-### Overall Score
+### Best Experiment Metrics
 
-![Overall Score](results/best/visualizations/experiment_001_overall_score.png)
-
-### Component F1
-
-![Component F1](results/best/visualizations/experiment_001_component_f1.png)
-
-### Ratio R2
-
-![Ratio R2](results/best/visualizations/experiment_001_ratio_r2.png)
+![Best Experiment Metrics](results/best/visualizations/final_metrics_barchart_academic.png)
 
 ### Attention Visualization
 

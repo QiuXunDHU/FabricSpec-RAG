@@ -61,17 +61,9 @@ flowchart TD
 
 The following figures are selected from existing experiment visualizations and show the type of outputs produced by the project.
 
-### Overall Score
+### Best Experiment Metrics
 
-![Overall Score](results/best/visualizations/experiment_001_overall_score.png)
-
-### Component F1
-
-![Component F1](results/best/visualizations/experiment_001_component_f1.png)
-
-### Ratio R2
-
-![Ratio R2](results/best/visualizations/experiment_001_ratio_r2.png)
+![Best Experiment Metrics](results/best/visualizations/final_metrics_barchart_academic.png)
 
 ### Attention Visualization
 
