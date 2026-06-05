@@ -23,7 +23,7 @@ causes, and the fixes applied.
 | README language | README was English-only after cleanup. | Initial rewrite optimized for release clarity but not bilingual presentation. | Added Chinese `README.md` and English `README.en.md`, both with figures and citation. |
 | Citation | Repository lacked standard citation metadata. | No `CITATION.cff` existed. | Added `CITATION.cff` and BibTeX entries in both README files. |
 | Generated artifacts | `results/`, `__pycache__/`, IDE files, and `.codegraph/` could be accidentally committed. | Local analysis/training outputs live in the workspace. | Added `.gitignore`; kept `.codegraph/` locally but ignored; moved prior results to `_private/`. |
-| Visual assets | README did not show representative results. | Existing visualizations were under private results. | Copied selected images to `docs/assets/` and embedded them in both README files. |
+| Visual assets | README did not show representative results in the expected result directory. | Existing best visualizations were under private results, while the first public copy used `docs/assets/`. | Copied the full selected best visualization set and metrics to `results/best/`; README files now reference those result artifacts directly. |
 
 ## Remaining Notes
 

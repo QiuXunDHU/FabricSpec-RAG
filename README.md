@@ -63,23 +63,23 @@ flowchart TD
 
 ### Overall Score
 
-![Overall Score](docs/assets/overall_score.png)
+![Overall Score](results/best/visualizations/experiment_001_overall_score.png)
 
 ### Component F1
 
-![Component F1](docs/assets/component_f1.png)
+![Component F1](results/best/visualizations/experiment_001_component_f1.png)
 
 ### Ratio R2
 
-![Ratio R2](docs/assets/ratio_r2.png)
+![Ratio R2](results/best/visualizations/experiment_001_ratio_r2.png)
 
 ### Attention Visualization
 
-![Attention Visualization](docs/assets/attention_epoch2.png)
+![Attention Visualization](results/best/visualizations/epoch_2_attention_attention.png)
 
 ### Embedding t-SNE
 
-![Embedding t-SNE](docs/assets/embedding_tsne_epoch2.png)
+![Embedding t-SNE](results/best/visualizations/epoch_2_embedding_tsne.png)
 
 ## 项目结构
 
@@ -88,7 +88,7 @@ FabricNIR/
 ├── checkpoints/             # 公开发布的选定模型权重
 ├── configs/                 # 基础配置与消融实验配置
 ├── data/                    # 可公开的少量样例数据
-├── docs/assets/             # README 使用的结果图
+├── results/best/            # 公开展示的最佳结果图和指标
 ├── experiments/             # 消融实验编排脚本
 ├── fabric_nir/              # 核心 Python 包
 │   ├── data/                # Dataset 与数据预处理
@@ -153,7 +153,7 @@ python main.py --matrix configs/experiment_matrix.yaml --device cpu --epochs 2
 python main.py --experiment_id experiment_001 --device cpu --epochs 2
 ```
 
-训练输出会写入 `results/`，该目录默认不提交到版本控制。
+训练输出会写入 `results/`。仓库只保留 `results/best/` 中选定的最佳结果图和指标，其余运行输出默认不提交到版本控制。
 
 ## 模型设计
 
@@ -222,4 +222,4 @@ model:
 - 完整原始数据放在本地私有目录，不提交到仓库
 - 公开数据只保留少量格式样例
 - 公开模型只保留一个选定 checkpoint
-- 不提交 `results/`、`__pycache__/`、`.codegraph/`、本地 IDE 配置和安装包
+- 除 `results/best/` 外，不提交其他运行结果、`__pycache__/`、`.codegraph/`、本地 IDE 配置和安装包

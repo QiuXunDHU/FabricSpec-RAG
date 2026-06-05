@@ -63,23 +63,23 @@ The following figures are selected from existing experiment visualizations and s
 
 ### Overall Score
 
-![Overall Score](docs/assets/overall_score.png)
+![Overall Score](results/best/visualizations/experiment_001_overall_score.png)
 
 ### Component F1
 
-![Component F1](docs/assets/component_f1.png)
+![Component F1](results/best/visualizations/experiment_001_component_f1.png)
 
 ### Ratio R2
 
-![Ratio R2](docs/assets/ratio_r2.png)
+![Ratio R2](results/best/visualizations/experiment_001_ratio_r2.png)
 
 ### Attention Visualization
 
-![Attention Visualization](docs/assets/attention_epoch2.png)
+![Attention Visualization](results/best/visualizations/epoch_2_attention_attention.png)
 
 ### Embedding t-SNE
 
-![Embedding t-SNE](docs/assets/embedding_tsne_epoch2.png)
+![Embedding t-SNE](results/best/visualizations/epoch_2_embedding_tsne.png)
 
 ## Project Layout
 
@@ -88,7 +88,7 @@ FabricNIR/
 ├── checkpoints/             # Selected public checkpoint
 ├── configs/                 # Base and ablation configs
 ├── data/                    # Public sample workbooks
-├── docs/assets/             # Figures used by README files
+├── results/best/            # Public best-result figures and metrics
 ├── experiments/             # Ablation orchestration
 ├── fabric_nir/              # Core Python package
 │   ├── data/                # Datasets and preprocessing
@@ -153,7 +153,7 @@ Run a selected experiment:
 python main.py --experiment_id experiment_001 --device cpu --epochs 2
 ```
 
-Training outputs are written to `results/`, which is ignored by default.
+Training outputs are written to `results/`. The repository keeps only the selected best-result figures and metrics under `results/best/`; other generated outputs are ignored by default.
 
 ## Model Design
 
@@ -222,4 +222,4 @@ If this repository or paper is useful for your research, please cite:
 - Keep the full raw dataset in a private local directory
 - Publish only minimal sample data for format inspection
 - Publish only one selected checkpoint
-- Do not commit `results/`, `__pycache__/`, `.codegraph/`, local IDE files, or installers
+- Do not commit generated outputs outside `results/best/`, `__pycache__/`, `.codegraph/`, local IDE files, or installers

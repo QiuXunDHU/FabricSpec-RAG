@@ -23,6 +23,8 @@ _private/
 # Experiment outputs
 results/*
 !results/.gitkeep
+!results/best/
+!results/best/**
 
 # Dataset policy: publish only the small sample workbooks in data/.
 data/*

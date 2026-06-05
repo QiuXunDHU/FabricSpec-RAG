@@ -12,8 +12,12 @@ FabricNIR/
 |   |-- train.xlsx
 |   `-- valid.xlsx
 |-- docs/
-|   |-- assets/
 |   `-- open_source_audit.md
+|-- results/
+|   |-- .gitkeep
+|   `-- best/
+|       |-- metrics/
+|       `-- visualizations/
 |-- checkpoints/
 |   |-- README.md
 |   `-- fabricnir_best.pt
@@ -33,6 +37,8 @@ FabricNIR/
 `-- requirements.txt
 ```
 
-Generated outputs are written to `results/` and ignored by version control.
+Generated outputs are written to `results/`. Only the selected best-result
+artifact set under `results/best/` is tracked; other generated outputs are
+ignored by version control.
 Full datasets, intermediate checkpoints, installers, and local project files are
 kept outside the publishable tree through `.gitignore`.
